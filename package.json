@@ -1,0 +1,23 @@
+{
+  "name": "saltire-lerna",
+  "version": "1.0.0",
+  "description": "Publish small collections of NPM projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saltires/saltire-lerna.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saltires/saltire-lerna/issues"
+  },
+  "homepage": "https://github.com/saltires/saltire-lerna#readme",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
