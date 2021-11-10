@@ -3,5 +3,5 @@
 module.exports = rgbhex;
 
 function rgbhex() {
-    // TODO
+    // TODO is
 }
