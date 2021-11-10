@@ -1,5 +1,5 @@
 {
-  "name": "@saltire/rgbhex",
+  "name": "@ahau2019/rgbhex",
   "version": "1.0.3-alpha.0",
   "description": "Conversion between RGB and HEX",
   "keywords": [
@@ -33,5 +33,5 @@
   "devDependencies": {
     "typescript": "4"
   },
-  "gitHead": "7c4cfe163dc68c86d563090849281ff3e2b73ea0"
+  "gitHead": "f005338ec6b49fb718fd2d282ae2205a4ba8a67e"
 }
