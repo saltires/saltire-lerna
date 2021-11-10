@@ -19,5 +19,6 @@
   "homepage": "https://github.com/saltires/saltire-lerna#readme",
   "devDependencies": {
     "lerna": "^4.0.0"
-  }
+  },
+  "dependencies": {}
 }

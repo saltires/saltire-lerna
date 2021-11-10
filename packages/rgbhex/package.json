@@ -1,0 +1,36 @@
+{
+  "name": "rgbhex",
+  "version": "1.0.0",
+  "description": "Conversion between RGB and HEX",
+  "keywords": [
+    "rgb",
+    "hex",
+    "convert",
+    "color",
+    "mode"
+  ],
+  "author": "saltires <ye998102@163.com>",
+  "homepage": "https://github.com/saltires/saltire-lerna/tree/main/packages/rgbhex#readme",
+  "license": "ISC",
+  "main": "lib/rgbhex.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saltires/saltire-lerna.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/saltires/saltire-lerna/issues"
+  },
+  "devDependencies": {
+    "typescript": "4"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "hash",
+  "version": "1.0.0",
+  "description": "test",
+  "keywords": [
+    "ad"
+  ],
+  "author": "saltires <ye998102@163.com>",
+  "homepage": "https://github.com/saltires/saltire-lerna/tree/main/packages/hash#readme",
+  "license": "ISC",
+  "main": "lib/hash.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saltires/saltire-lerna.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/saltires/saltire-lerna/issues"
+  },
+  "devDependencies": {
+    "typescript": "4"
+  }
+}
