@@ -33,5 +33,8 @@
   "devDependencies": {
     "typescript": "4"
   },
-  "gitHead": "f005338ec6b49fb718fd2d282ae2205a4ba8a67e"
+  "gitHead": "1cf0baa2bfd8e4474c33e72115fea4ec961576bc",
+  "publishConfig": {
+    "access": "public"
+  }
 }
