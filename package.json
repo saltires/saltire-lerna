@@ -1,5 +1,5 @@
 {
-  "name": "saltire-lerna",
+  "name": "@saltire/saltire-lerna",
   "version": "1.0.0",
   "description": "Publish small collections of NPM projects",
   "main": "index.js",
