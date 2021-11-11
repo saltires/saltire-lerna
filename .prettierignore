@@ -8,3 +8,4 @@ package-lock.json
 .hui
 .dockerignore
 .eslintignore
+.editorconfig
