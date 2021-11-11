@@ -17,8 +17,23 @@
     "url": "https://github.com/saltires/saltire-lerna/issues"
   },
   "homepage": "https://github.com/saltires/saltire-lerna#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier -c --write",
+      "git add"
+    ]
+  },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "execa": "^5.1.1",
+    "husky": "^1.2.1",
+    "lerna": "^4.0.0",
+    "lint-staged": "^8.1.7",
+    "prettier": "^2.3.2"
   },
   "dependencies": {}
 }
