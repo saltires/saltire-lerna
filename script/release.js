@@ -6,6 +6,7 @@ const exec = require('./utils/exec');
 const { writeFileSync, readFileSync } = require('fs');
 const { getChangelog } = require('./utils/changelog');
 const git = require('./utils/git');
+const { execSync } = require('child_process');
 
 const cwd = process.cwd();
 const args = yParser(process.argv.slice(2));
@@ -38,7 +39,7 @@ async function release() {
   // Bump version and publish
   console.log('start process lerarncli');
   console.log('lernaCli', lernaCli);
-  await exec(lernaCli, ['publish', '--exact', '--no-commit-hooks', '--no-push']);
+  await execSync(lernaCli, ['publish', '--exact', '--no-commit-hooks', '--no-push']);
 
   // get release notes
   const releaseNotes = await getChangelog(latestTag, originalChangelog);
