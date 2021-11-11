@@ -38,7 +38,7 @@ async function release() {
   // Bump version and publish
   console.log('start process lerarncli');
   console.log('lernaCli', lernaCli);
-  await exec(lernaCli, ['publish', '--exact', '--no-commit-hooks', '--no-push']);
+  await exec('lerna', ['publish', '--exact', '--no-commit-hooks', '--no-push']);
 
   // get release notes
   const releaseNotes = await getChangelog(latestTag, originalChangelog);
