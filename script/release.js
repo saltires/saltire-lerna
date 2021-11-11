@@ -38,7 +38,7 @@ async function release() {
   // Bump version and publish
   console.log('start process lerarncli');
   exec(lernaCli, ['publish', '--exact', '--no-commit-hooks', '--no-push']).catch((error) => {
-    cosnole.log(error);
+    console.log(error);
   });
 
   // get release notes
