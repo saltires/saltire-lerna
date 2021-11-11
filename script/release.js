@@ -9,7 +9,7 @@ const git = require('./utils/git');
 
 const cwd = process.cwd();
 const args = yParser(process.argv.slice(2));
-const lernaCli = require.resolve('lerna/cli');
+const lernaCli = path.resolve(cwd, 'test.js');
 const resolveFile = (_path) => path.resolve(cwd, _path);
 
 function printErrorAndExit(message) {
