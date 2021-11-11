@@ -48,7 +48,7 @@ async function release() {
   await exec('git', ['commit', '--all', '--message', commitMessage]);
 
   // Push
-  await exec('git', ['push', 'origin', '2.x']);
+  await exec('git', ['push', 'origin', 'feature-rgbhex']);
 }
 
 // require('@toolkit-js/ibuild')
