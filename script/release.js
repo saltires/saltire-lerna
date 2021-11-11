@@ -49,10 +49,12 @@ async function release() {
   await exec('git', ['push', 'origin', '2.x']);
 }
 
-require('@toolkit-js/ibuild')
-  .default()
-  .then(release)
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
+// require('@toolkit-js/ibuild')
+//   .default()
+//   .then(release)
+//   .catch((err) => {
+//     console.error(err);
+//     process.exit(1);
+//   });
+
+release().catch((error) => console.log(error));
