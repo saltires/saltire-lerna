@@ -1,16 +1,12 @@
-const execa = require("execa");
+const execa = require('execa');
 
 exports.latestTag = async () => {
-  const { stdout } = await execa("git", ["describe", "--abbrev=0", "--tags"]);
+  const { stdout } = await execa('git', ['describe', '--abbrev=0', '--tags']);
   return stdout;
 };
 
 const firstCommit = async () => {
-  const { stdout } = await execa("git", [
-    "rev-list",
-    "--max-parents=0",
-    "HEAD",
-  ]);
+  const { stdout } = await execa('git', ['rev-list', '--max-parents=0', 'HEAD']);
   return stdout;
 };
 
@@ -28,15 +24,15 @@ exports.latestTagOrFirstCommit = async () => {
 };
 
 exports.commitsFromRevision = async (revision) => {
-  const { stdout } = await execa("git", [
-    "log",
-    "--format=ref<%D> message<%s> date<%cd>",
-    "--date=short",
+  const { stdout } = await execa('git', [
+    'log',
+    '--format=ref<%D> message<%s> date<%cd>',
+    '--date=short',
     `${revision}..HEAD`,
   ]);
 
   if (stdout) {
-    return stdout.split("\n");
+    return stdout.split('\n');
   }
 
   return [];

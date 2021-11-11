@@ -1,17 +1,16 @@
-const { htmlEscape } = require("escape-goat");
-const git = require("./git");
+const { htmlEscape } = require('escape-goat');
+const git = require('./git');
 
-const isPackageCommit = (message) =>
-  /^(\w*)\(([\w$.\-*/ ]*)\)?: (.*)$/.test(message);
+const isPackageCommit = (message) => /^(\w*)\(([\w$.\-*/ ]*)\)?: (.*)$/.test(message);
 const messageRegexp = /^(\w*)(?:\(([\w$.\-*/ ]*)\))?: (.*)$/;
-const UNRELEASED_TAG = "___unreleased___";
+const UNRELEASED_TAG = '___unreleased___';
 
 const labels = {
-  breaking: ":boom: Breaking Change",
-  feat: ":rocket: Enhancement",
-  fix: ":bug: Bug Fix",
-  docs: ":memo: Documentation",
-  internal: ":house: Internal",
+  breaking: ':boom: Breaking Change',
+  feat: ':rocket: Enhancement',
+  fix: ':bug: Bug Fix',
+  docs: ':memo: Documentation',
+  internal: ':house: Internal',
 };
 
 const header = `---
@@ -22,13 +21,13 @@ sidebar: auto
 
 `;
 
-let latestChangelog = "";
+let latestChangelog = '';
 
 function getPackage(message) {
   if (isPackageCommit(message)) {
-    const label = message.split(": ")[0],
-      leftBracketIndex = label.indexOf("("),
-      rightBracketIndex = label.indexOf(")");
+    const label = message.split(': ')[0],
+      leftBracketIndex = label.indexOf('('),
+      rightBracketIndex = label.indexOf(')');
     return label.substring(leftBracketIndex + 1, rightBracketIndex);
   }
 
@@ -37,7 +36,7 @@ function getPackage(message) {
 
 function getToday() {
   const date = new Date().toISOString();
-  return date.slice(0, date.indexOf("T"));
+  return date.slice(0, date.indexOf('T'));
 }
 
 function parseLogMessage(commit) {
@@ -51,12 +50,12 @@ function parseLogMessage(commit) {
 
   let tagsInCommit;
   if (refName.length > 1) {
-    const TAG_PREFIX = "tag: ";
+    const TAG_PREFIX = 'tag: ';
 
     // Since there might be multiple tags referenced by the same commit,q
     // we need to treat all of them as a list.
     tagsInCommit = refName
-      .split(", ")
+      .split(', ')
       .filter((ref) => ref.startsWith(TAG_PREFIX))
       .map((ref) => ref.substr(TAG_PREFIX.length));
   }
@@ -64,7 +63,7 @@ function parseLogMessage(commit) {
   return {
     tags: tagsInCommit,
     message: isPackageCommit(message)
-      ? message.replace(/^(\w*)\(([\w$.\-*/ ]*)\)?: /, "")
+      ? message.replace(/^(\w*)\(([\w$.\-*/ ]*)\)?: /, '')
       : message,
     label: Object.keys(labels).find((label) => message.startsWith(label)),
     package: getPackage(message),
@@ -114,12 +113,12 @@ function renderRelease(release) {
   // 不同的 tag 下可能有重复的提交记录
   commits = commits.filter(({ label, package }) => {
     if (Boolean(label) && Boolean(package)) {
-      if (package.startsWith("hui-")) {
-        package = package.replace("hui-", "");
+      if (package.startsWith('hui-')) {
+        package = package.replace('hui-', '');
       }
 
       // 如果时插件的更新记录必须完全匹配，类似 hui-plugin-micro-app 和 hui-micro-app 的记录可能分不开
-      if (name.indexOf("plugin")) {
+      if (name.indexOf('plugin')) {
         return name.startsWith(`hui-${package}`);
       }
 
@@ -137,23 +136,21 @@ function renderRelease(release) {
     latestChangelog += `**Note:** Version bump only for package ${name}\n`;
   }
 
-  latestChangelog += "\n\n\n";
+  latestChangelog += '\n\n\n';
 }
 
 async function getChangelog(latestTag, originalChangelog) {
   let allCommits = await git.commitsFromRevision(latestTag);
 
   if (allCommits.length <= 0) {
-    throw "zero new commits found !";
+    throw 'zero new commits found !';
   }
 
   allCommits = allCommits.map((commit) => parseLogMessage(commit));
 
   groupByRelease(allCommits).forEach(renderRelease);
 
-  return `${header}${latestChangelog}${originalChangelog.substring(
-    header.length
-  )}`;
+  return `${header}${latestChangelog}${originalChangelog.substring(header.length)}`;
 }
 
 exports.getChangelog = getChangelog;

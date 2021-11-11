@@ -1,15 +1,15 @@
-const chalk = require("chalk");
-const execa = require("execa");
-const path = require("path");
-const yParser = require("yargs-parser");
-const exec = require("./utils/exec");
-const { writeFileSync, readFileSync } = require("fs");
-const { getChangelog } = require("./utils/changelog");
-const git = require("./utils/git");
+const chalk = require('chalk');
+const execa = require('execa');
+const path = require('path');
+const yParser = require('yargs-parser');
+const exec = require('./utils/exec');
+const { writeFileSync, readFileSync } = require('fs');
+const { getChangelog } = require('./utils/changelog');
+const git = require('./utils/git');
 
 const cwd = process.cwd();
 const args = yParser(process.argv.slice(2));
-const lernaCli = require.resolve("lerna/cli");
+const lernaCli = require.resolve('lerna/cli');
 const resolveFile = (_path) => path.resolve(cwd, _path);
 
 function printErrorAndExit(message) {
@@ -19,44 +19,37 @@ function printErrorAndExit(message) {
 
 async function release() {
   // Check git status
-  const { stdout: gitStatus } = execa.sync("git", ["status", "--porcelain"]);
+  const { stdout: gitStatus } = execa.sync('git', ['status', '--porcelain']);
   if (gitStatus.length) {
-    printErrorAndExit("Your git status is not clean. Aborting.");
+    printErrorAndExit('Your git status is not clean. Aborting.');
   }
 
   const latestTag = await git.latestTagOrFirstCommit();
   // const latestTag = "@hui/router@0.0.45";
 
-  let originalChangelog = "";
+  let originalChangelog = '';
 
   try {
-    originalChangelog = readFileSync(
-      resolveFile("./docs/CHANGELOG.md")
-    ).toString();
+    originalChangelog = readFileSync(resolveFile('./docs/CHANGELOG.md')).toString();
   } catch (error) {}
 
   // Bump version and publish
-  await exec(lernaCli, [
-    "publish",
-    "--exact",
-    "--no-commit-hooks",
-    "--no-push",
-  ]);
+  await exec(lernaCli, ['publish', '--exact', '--no-commit-hooks', '--no-push']);
 
   // get release notes
   const releaseNotes = await getChangelog(latestTag, originalChangelog);
 
-  writeFileSync(resolveFile("./docs/CHANGELOG.md"), releaseNotes);
+  writeFileSync(resolveFile('./docs/CHANGELOG.md'), releaseNotes);
 
   // Commit
   const commitMessage = `docs: update CHANGELOG`;
-  await exec("git", ["commit", "--all", "--message", commitMessage]);
+  await exec('git', ['commit', '--all', '--message', commitMessage]);
 
   // Push
-  await exec("git", ["push", "origin", "2.x"]);
+  await exec('git', ['push', 'origin', '2.x']);
 }
 
-require("@toolkit-js/ibuild")
+require('@toolkit-js/ibuild')
   .default()
   .then(release)
   .catch((err) => {
