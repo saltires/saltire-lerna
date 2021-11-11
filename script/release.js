@@ -9,7 +9,7 @@ const git = require('./utils/git');
 
 const cwd = process.cwd();
 const args = yParser(process.argv.slice(2));
-const lernaCli = path.resolve(cwd, 'test.js');
+const lernaCli = require.resolve('lerna/cli');
 const resolveFile = (_path) => path.resolve(cwd, _path);
 
 function printErrorAndExit(message) {
@@ -38,11 +38,7 @@ async function release() {
   // Bump version and publish
   console.log('start process lerarncli');
   console.log('lernaCli', lernaCli);
-  await exec('lerna', ['publish', '--exact', '--no-commit-hooks', '--no-push'], {
-    env: {
-      PATH: process.env.PATH,
-    },
-  });
+  await exec('node', [lernaCli, 'publish', '--exact', '--no-commit-hooks', '--no-push']);
 
   // get release notes
   const releaseNotes = await getChangelog(latestTag, originalChangelog);
