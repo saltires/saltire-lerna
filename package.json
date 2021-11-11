@@ -2,9 +2,12 @@
   "name": "@saltire/saltire-lerna",
   "version": "1.0.0",
   "description": "Publish small collections of NPM projects",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean -y",
+    "prettier": "prettier -c --write **/*.{js,jsx,tsx,ts,less,md,json}",
+    "release": "npm run prettier && node scripts/release.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +32,7 @@
     ]
   },
   "devDependencies": {
+    "@toolkit-js/iconfig": "0.0.8",
     "execa": "^5.1.1",
     "husky": "^1.2.1",
     "lerna": "^4.0.0",

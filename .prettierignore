@@ -1,0 +1,10 @@
+packages/rgbhex/**/lib
+packages/rgbhex/**/__tests__
+packages/hash/**/lib
+packages/hash/**/__tests__
+node_modules
+package.json
+package-lock.json
+.hui
+.dockerignore
+.eslintignore
