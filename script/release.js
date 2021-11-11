@@ -31,7 +31,9 @@ async function release() {
 
   try {
     originalChangelog = readFileSync(resolveFile('./docs/CHANGELOG.md')).toString();
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 
   // Bump version and publish
   await exec(lernaCli, ['publish', '--exact', '--no-commit-hooks', '--no-push']);
