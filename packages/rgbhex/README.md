@@ -1,3 +1,5 @@
+# @ahau2019/rgbhex ![coverage](https://img.shields.io/badge/coverage-100%25-green) ![test](https://img.shields.io/badge/test-pass-blue)
+
 ## Getting started
 
 Install with npm:

@@ -29,7 +29,8 @@
     "compile": "tsc",
     "copy": "copyfiles -u 1 \"src/**/*.d.ts\" lib",
     "build": "run-s clean compile copy",
-    "test": "jest"
+    "test": "jest",
+    "coveralls": "coveralls < coverage/lcov.info"
   },
   "bugs": {
     "url": "https://github.com/saltires/saltire-lerna/issues"
