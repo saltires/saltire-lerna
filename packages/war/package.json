@@ -1,5 +1,5 @@
 {
-  "name": "@ahau2019/war",
+  "name": "@fim3/war",
   "version": "0.0.1",
   "description": "Compresses a specified directory into a war file",
   "main": "lib/index.js",
