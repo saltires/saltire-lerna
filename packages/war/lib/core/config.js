@@ -14,7 +14,7 @@ let useDeployInPackage = false;
 let useDeployInWorkSpace = false;
 try {
   useDeployInPackage = (0, fs_1.existsSync)(
-    path_1.default.resolve(cwd(), 'node_modules/war/deploy'),
+    path_1.default.resolve(cwd(), 'node_modules/@ahau2019/war/deploy'),
   )
     ? true
     : false;

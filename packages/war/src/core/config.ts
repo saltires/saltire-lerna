@@ -7,7 +7,9 @@ let useDeployInPackage = false;
 let useDeployInWorkSpace = false;
 
 try {
-  useDeployInPackage = existsSync(path.resolve(cwd(), 'node_modules/war/deploy')) ? true : false;
+  useDeployInPackage = existsSync(path.resolve(cwd(), 'node_modules/@ahau2019/war/deploy'))
+    ? true
+    : false;
   useDeployInWorkSpace = existsSync(path.resolve(cwd(), 'deploy')) ? true : false;
 } catch (error) {
   console.error(error);
