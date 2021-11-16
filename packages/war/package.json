@@ -49,5 +49,9 @@
     "moment": "^2.29.1",
     "ora": "^5.4.1",
     "shelljs": "^0.8.4"
+  },
+  "gitHead": "ee7639203b6d573606c6960c4d7ee884db447ab0",
+  "publishConfig": {
+    "access": "public"
   }
 }
