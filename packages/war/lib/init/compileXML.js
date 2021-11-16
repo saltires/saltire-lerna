@@ -13,7 +13,7 @@ exports.default = (state) => {
         xmlCompiled({
           seeSystemType: seeConfig.systemType,
           seeAppType: seeConfig.appType,
-          seeAppName: core_1.config.packageInfo.cliName,
+          seeAppName: core_1.config.packageInfo.name,
           seeAppDescription: seeConfig.appDescription,
           deployVersion: seeConfig.deployVersion,
           variables: '',

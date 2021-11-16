@@ -45,3 +45,18 @@ Specify output address
 ```js
 npx war -s '../'
 ```
+
+## config
+
+SEE configuration stored in package.json
+
+```js
+"see": {
+  "packageName": "xxxx",
+  "systemType": "xxxx",
+  "appType": "xxxx",
+  "packageVersion": "xxx",
+  "miniVersion": "xxxx",
+  "appDescription": "xxxx"
+},
+```

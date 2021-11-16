@@ -9,12 +9,12 @@ async function prepare(state) {
   const tempScriptDir = path.join(
     core_1.config.paths.temp,
     '/scripts',
-    core_1.config.packageInfo.cliName,
+    core_1.config.packageInfo.name,
   );
   const tempTemplateDir = path.join(
     core_1.config.paths.temp,
     '/template',
-    core_1.config.packageInfo.cliName,
+    core_1.config.packageInfo.name,
   );
   try {
     fs2.emptyDirSync(core_1.config.paths.temp);

@@ -10,14 +10,20 @@ const path_1 = __importDefault(require('path'));
 const fs_1 = require('fs');
 const package_json_1 = require('../../package.json');
 const { cwd } = process;
-const useDeployInPackage = (0, fs_1.existsSync)(
-  path_1.default.resolve(cwd(), 'node_modules/war/deploy'),
-)
-  ? true
-  : false;
-const useDeployInWorkSpace = (0, fs_1.existsSync)(path_1.default.resolve(cwd(), 'deploy'))
-  ? true
-  : false;
+let useDeployInPackage = false;
+let useDeployInWorkSpace = false;
+try {
+  useDeployInPackage = (0, fs_1.existsSync)(
+    path_1.default.resolve(cwd(), 'node_modules/war/deploy'),
+  )
+    ? true
+    : false;
+  useDeployInWorkSpace = (0, fs_1.existsSync)(path_1.default.resolve(cwd(), 'deploy'))
+    ? true
+    : false;
+} catch (error) {
+  console.error(error);
+}
 exports.default = {
   /**
    * Global system path
@@ -42,7 +48,7 @@ exports.default = {
    */
   get templateDir() {
     return useDeployInPackage
-      ? path_1.default.resolve(cwd(), 'node_modules/war/deploy')
+      ? path_1.default.resolve(cwd(), 'node_modules/@ahau2019/war/deploy')
       : useDeployInWorkSpace
       ? path_1.default.resolve(cwd(), 'deploy')
       : '';

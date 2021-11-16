@@ -1,6 +1,5 @@
 {
   "name": "@ahau2019/war",
-  "cliName": "war",
   "version": "2.0.3",
   "description": "Compresses a specified directory into a war file",
   "main": "lib/index.js",
@@ -25,11 +24,6 @@
   ],
   "bin": {
     "war": "bin/war.js"
-  },
-  "see": {
-    "packageName": "FIM3.0-BUSINPUBHUI",
-    "systemType": "FIM3",
-    "appType": "hsfund.fim3.businpub.hui"
   },
   "author": "saltires",
   "license": "ISC",

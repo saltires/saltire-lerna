@@ -24,7 +24,7 @@ exports.default = async (ctx) => {
   ctx.outputDir = path_1.default.join(ctx.outputDir, ctx.seeConfig.zipName);
   function generateSeeConfig() {
     return {
-      warName: `${core_1.config.packageInfo.cliName}-${miniVersion}.war`,
+      warName: `${core_1.config.packageInfo.name}-${miniVersion}.war`,
       zipName: `${packageName}V${packageVersion}-${_stamp}.zip`,
       deployVersion: packageVersion,
       packageName,

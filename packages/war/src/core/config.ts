@@ -3,10 +3,15 @@ import path from 'path';
 import { existsSync } from 'fs';
 import { cliName } from '../../package.json';
 const { cwd } = process;
-const useDeployInPackage = existsSync(path.resolve(cwd(), 'node_modules/war/deploy'))
-  ? true
-  : false;
-const useDeployInWorkSpace = existsSync(path.resolve(cwd(), 'deploy')) ? true : false;
+let useDeployInPackage = false;
+let useDeployInWorkSpace = false;
+
+try {
+  useDeployInPackage = existsSync(path.resolve(cwd(), 'node_modules/war/deploy')) ? true : false;
+  useDeployInWorkSpace = existsSync(path.resolve(cwd(), 'deploy')) ? true : false;
+} catch (error) {
+  console.error(error);
+}
 
 export default {
   /**
@@ -32,7 +37,7 @@ export default {
    */
   get templateDir() {
     return useDeployInPackage
-      ? path.resolve(cwd(), 'node_modules/war/deploy')
+      ? path.resolve(cwd(), 'node_modules/@ahau2019/war/deploy')
       : useDeployInWorkSpace
       ? path.resolve(cwd(), 'deploy')
       : '';

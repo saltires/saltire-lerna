@@ -20,7 +20,7 @@ export default async (ctx: Context) => {
 
   function generateSeeConfig(): SeeConfig {
     return {
-      warName: `${config.packageInfo.cliName}-${miniVersion}.war`,
+      warName: `${config.packageInfo.name}-${miniVersion}.war`,
       zipName: `${packageName}V${packageVersion}-${_stamp}.zip`,
       deployVersion: packageVersion,
       packageName,

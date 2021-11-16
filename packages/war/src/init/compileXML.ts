@@ -14,7 +14,7 @@ export default (state: Context) => {
         xmlCompiled({
           seeSystemType: seeConfig!.systemType,
           seeAppType: seeConfig!.appType,
-          seeAppName: config.packageInfo.cliName,
+          seeAppName: config.packageInfo.name,
           seeAppDescription: seeConfig!.appDescription,
           deployVersion: seeConfig!.deployVersion,
           variables: '',
