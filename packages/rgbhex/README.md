@@ -11,7 +11,7 @@ npm install @ahau2019/rgbhex -S
 Then `require` and use it in your code:
 
 ```javascript
-const { rgb2hex, hex2rgb } = require('chokidar');
+const { rgb2hex, hex2rgb } = require('@ahau2019/rgbhex');
 
 // convert rgb color to hex
 rgb2hex('rgba(255,255,255,1)');
@@ -34,7 +34,7 @@ rgb2hex('rgba(255,255,255,1)');
 // 3 [255,255,255]
 // 4 [255,255,255,1]
 // 5 ['255','255','255','1']
-// 5 ['255','255','255']
+// 6 ['255','255','255']
 
 expect(rgb2hex('rgb(255,255,255)')).toEqual({
   hex: '#ffffff',
