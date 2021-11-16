@@ -19,6 +19,10 @@
     "war",
     "rar"
   ],
+  "files": [
+    "lib",
+    "deploy"
+  ],
   "bin": {
     "war": "bin/war.js"
   },
