@@ -1,7 +1,7 @@
 import envPaths from 'env-paths';
 import path from 'path';
 import { existsSync } from 'fs';
-import { cliName } from '../../package.json';
+import { name } from '../../package.json';
 const { cwd } = process;
 let useDeployInPackage = false;
 let useDeployInWorkSpace = false;
@@ -18,7 +18,7 @@ export default {
    * Global system path
    */
   get paths() {
-    return envPaths(cliName, { suffix: undefined });
+    return envPaths(name, { suffix: undefined });
   },
   /**
    * Directory of the folder to be packed

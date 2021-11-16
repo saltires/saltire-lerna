@@ -29,7 +29,7 @@ exports.default = {
    * Global system path
    */
   get paths() {
-    return (0, env_paths_1.default)(package_json_1.cliName, { suffix: undefined });
+    return (0, env_paths_1.default)(package_json_1.name, { suffix: undefined });
   },
   /**
    * Directory of the folder to be packed
