@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deploy name="">
+  <basic describe="基本信息">
+    <packType describe="包类型" options="pack:全量包;patch:补丁包">pack</packType>
+    <systemType describe="系统类型">${ seeSystemType }</systemType>
+    <appType describe="应用类型">${ seeAppType }</appType>
+    <appName describe="应用名称">${ seeAppName }</appName>
+    <appDescribe describe="应用说明">${ seeAppDescription }</appDescribe>
+    <version describe="应用版本">${ deployVersion }</version>
+    <group>bizframe</group>
+    <packInEffect describe="影响的主包（只有补丁需要配置，填写主包的版本号）"></packInEffect>
+  </basic>
+  <globalConfig describe="系统全局配置">
+    <variables describe="集群基本参数">
+      <field label="安装用户" name="user" type="input">root</field>
+      <field label="安装目录" name="workspace" type="input" >/home/hsiar/hsiar-green/html</field>
+      <field label="子系统名称" name="appName" type="hidden" visible="false">${ seeAppName }</field>
+      <!-- <field label="安装目录" name="webroot" type="hidden" visible="false">/home/hsiar/hsiar-green/html</field> -->
+    </variables>
+  </globalConfig>
+  <subSystems describe="子系统集合">
+    <system id="${ seeAppName }" type="" name="${ seeAppName }" mode="cluster" front="">
+      <scale describe="集群规模"></scale>
+      <scripts describe="集群脚本集">
+        <script name="beforeInstall" path="" describe="安装前处理"/>
+        <script name="install" path="./scripts/${seeAppName}/install.sh" describe="部署"/>
+        <script name="afterInstall" path="" describe="安装后处理"/>
+        <script name="start" path="./scripts/${seeAppName}/start.sh" describe="启动" />
+        <script name="validateStart" path="" describe="启动状态检测" />
+        <script name="stop" path="./scripts/${seeAppName}/stop.sh" describe="停止" />
+        <script name="validateStop" path="" describe="停止状态监测" />
+        <script name="backup" path="" describe="备份" />
+        <script name="rollback" path="" describe="回滚" />
+        <script name="uninstall" path="./scripts/${seeAppName}/uninstall.sh" describe="卸载" />
+      </scripts>
+      <variables describe="应用配置参数">
+        ${ variables }
+      </variables>
+      <config path="./scripts/${seeAppName}/install.sh" encoding="UTF-8"/>
+      <config path="./scripts/${seeAppName}/uninstall.sh" encoding="UTF-8"/>
+      <node describe="节点私有配置信息"></node>
+    </system>
+  </subSystems>
+</deploy>
