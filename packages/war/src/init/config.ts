@@ -13,15 +13,16 @@ const {
 const _stamp = moment().format('YYMMDDHHmmss');
 
 export default async (ctx: Context) => {
+  /**
+   * priority: command line > package.json - see > default
+   */
+  const deployVersion = ctx!.seeConfig!.deployVersion || _packageVersion;
+  const miniVersion = ctx!.seeConfig!.miniVersion || _miniVersion;
+
   ctx.deployXmlTemplateDir = path.join(ctx.templateDir!, 'deploy.xml');
   ctx.deployXmlTemplateDirTmp = path.resolve(config.paths.temp, 'deploy.xml');
   ctx.seeConfig = generateSeeConfig();
   ctx.outputDir = path.join(ctx.outputDir!, ctx.seeConfig!.zipName!);
-  /**
-   * priority: command line > package.json - see > default
-   */
-  const deployVersion = ctx.seeConfig.deployVersion || _packageVersion;
-  const miniVersion = ctx.seeConfig.miniVersion || _miniVersion;
 
   function generateSeeConfig(): SeeConfig {
     return {

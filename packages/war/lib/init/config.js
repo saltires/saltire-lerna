@@ -18,15 +18,15 @@ const {
 } = core_1.config.packageInfo.see;
 const _stamp = moment().format('YYMMDDHHmmss');
 exports.default = async (ctx) => {
-  ctx.deployXmlTemplateDir = path_1.default.join(ctx.templateDir, 'deploy.xml');
-  ctx.deployXmlTemplateDirTmp = path_1.default.resolve(core_1.config.paths.temp, 'deploy.xml');
-  ctx.seeConfig = generateSeeConfig();
-  ctx.outputDir = path_1.default.join(ctx.outputDir, ctx.seeConfig.zipName);
   /**
    * priority: command line > package.json - see > default
    */
   const deployVersion = ctx.seeConfig.deployVersion || _packageVersion;
   const miniVersion = ctx.seeConfig.miniVersion || _miniVersion;
+  ctx.deployXmlTemplateDir = path_1.default.join(ctx.templateDir, 'deploy.xml');
+  ctx.deployXmlTemplateDirTmp = path_1.default.resolve(core_1.config.paths.temp, 'deploy.xml');
+  ctx.seeConfig = generateSeeConfig();
+  ctx.outputDir = path_1.default.join(ctx.outputDir, ctx.seeConfig.zipName);
   function generateSeeConfig() {
     return {
       warName: `${core_1.config.packageInfo.name}-${miniVersion}.war`,
