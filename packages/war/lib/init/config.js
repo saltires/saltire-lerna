@@ -10,8 +10,8 @@ const moment = require('moment');
 const path_1 = __importDefault(require('path'));
 const {
   packageName,
-  packageVersion = '2021',
-  miniVersion = '1.202101.1',
+  _packageVersion = '2021',
+  _miniVersion = '1.202101.1',
   systemType,
   appType,
   appDescription = core_1.config.packageInfo.description,
@@ -22,11 +22,16 @@ exports.default = async (ctx) => {
   ctx.deployXmlTemplateDirTmp = path_1.default.resolve(core_1.config.paths.temp, 'deploy.xml');
   ctx.seeConfig = generateSeeConfig();
   ctx.outputDir = path_1.default.join(ctx.outputDir, ctx.seeConfig.zipName);
+  /**
+   * priority: command line > package.json - see > default
+   */
+  const deployVersion = ctx.seeConfig.deployVersion || _packageVersion;
+  const miniVersion = ctx.seeConfig.miniVersion || _miniVersion;
   function generateSeeConfig() {
     return {
       warName: `${core_1.config.packageInfo.name}-${miniVersion}.war`,
-      zipName: `${packageName}V${packageVersion}-${_stamp}.zip`,
-      deployVersion: packageVersion,
+      zipName: `${packageName}V${deployVersion}-${_stamp}.zip`,
+      deployVersion: deployVersion,
       packageName,
       systemType,
       appType,

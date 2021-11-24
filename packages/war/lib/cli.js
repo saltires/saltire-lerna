@@ -14,7 +14,9 @@ program
   .description('Compresses a specified directory into a war file')
   .option('-t, --template <templatepath>', 'Specify the directory address of the deploy template')
   .option('-s, --src <srcpath>', 'Specifies which folder to package')
-  .option('-o, --output <outpath>', 'Specify output address');
+  .option('-o, --output <outpath>', 'Specify output address')
+  .option('-p, --packageversion <packageversion>', 'Specify packageVersion')
+  .option('-m, --miniversion <miniversion>', 'Specify miniVersion');
 program.parse(process.argv);
 const options = program.opts();
 (0, _1.default)(options);

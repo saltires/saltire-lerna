@@ -18,6 +18,10 @@ export default async (options: Options) => {
       : config.templateDir,
     srcDir: options.src ? generateAbsolutePath(options.src) : config.srcDir,
     outputDir: options.output ? generateAbsolutePath(options.output) : config.outDir,
+    seeConfig: {
+      deployVersion: options.packageversion,
+      miniVersion: options.miniversion,
+    },
   };
 
   // running creator

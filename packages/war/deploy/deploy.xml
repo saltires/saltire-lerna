@@ -24,20 +24,20 @@
       <scripts describe="集群脚本集">
         <script name="beforeInstall" path="" describe="安装前处理"/>
         <script name="install" path="./scripts/${seeAppName}/install.sh" describe="部署"/>
-        <script name="afterInstall" path="" describe="安装后处理"/>
+        <!-- <script name="afterInstall" path="" describe="安装后处理"/>
         <script name="start" path="./scripts/${seeAppName}/start.sh" describe="启动" />
         <script name="validateStart" path="" describe="启动状态检测" />
         <script name="stop" path="./scripts/${seeAppName}/stop.sh" describe="停止" />
         <script name="validateStop" path="" describe="停止状态监测" />
         <script name="backup" path="" describe="备份" />
         <script name="rollback" path="" describe="回滚" />
-        <script name="uninstall" path="./scripts/${seeAppName}/uninstall.sh" describe="卸载" />
+        <script name="uninstall" path="./scripts/${seeAppName}/uninstall.sh" describe="卸载" /> -->
       </scripts>
       <variables describe="应用配置参数">
         ${ variables }
       </variables>
-      <config path="./scripts/${seeAppName}/install.sh" encoding="UTF-8"/>
-      <config path="./scripts/${seeAppName}/uninstall.sh" encoding="UTF-8"/>
+      <!-- <config path="./scripts/${seeAppName}/install.sh" encoding="UTF-8"/>
+      <config path="./scripts/${seeAppName}/uninstall.sh" encoding="UTF-8"/> -->
       <node describe="节点私有配置信息"></node>
     </system>
   </subSystems>

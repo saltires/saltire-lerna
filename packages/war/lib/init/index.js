@@ -21,6 +21,10 @@ exports.default = async (options) => {
       : core_1.config.templateDir,
     srcDir: options.src ? generateAbsolutePath(options.src) : core_1.config.srcDir,
     outputDir: options.output ? generateAbsolutePath(options.output) : core_1.config.outDir,
+    seeConfig: {
+      deployVersion: options.packageversion,
+      miniVersion: options.miniversion,
+    },
   };
   // running creator
   await creator.run(context);
