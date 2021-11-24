@@ -43,7 +43,23 @@ npx war -s '../dist'
 Specify output address
 
 ```js
-npx war -s '../'
+npx war -o '../'
+```
+
+### [-p] [--packageversion]
+
+Specify packageVersion. It has a higher priority than packageVersion in the see field of the package.json
+
+```js
+npx war -p '1.00001'
+```
+
+### [-m] [--miniversion]
+
+Specify miniVersion. It has a higher priority than miniVersion in the see field of the package.json
+
+```js
+npx war -m '1.00003'
 ```
 
 ## config
