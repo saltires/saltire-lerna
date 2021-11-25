@@ -36,8 +36,8 @@
       <variables describe="应用配置参数">
         ${ variables }
       </variables>
-      <!-- <config path="./scripts/${seeAppName}/install.sh" encoding="UTF-8"/>
-      <config path="./scripts/${seeAppName}/uninstall.sh" encoding="UTF-8"/> -->
+      <config path="./scripts/${seeAppName}/install.sh" encoding="UTF-8"/>
+      <!-- <config path="./scripts/${seeAppName}/uninstall.sh" encoding="UTF-8"/> -->
       <node describe="节点私有配置信息"></node>
     </system>
   </subSystems>
