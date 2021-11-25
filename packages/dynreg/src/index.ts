@@ -24,7 +24,7 @@ export const dynreg = (option: Option): RegExp | null => {
     // Just Support Symbol（仅支持符号，符号中包含空格）
     Symbol: {
       active: false,
-      reg: '.',
+      reg: '^(0-9a-zA-Z\u4e00-\u9fa5)',
     },
   };
 
@@ -33,7 +33,17 @@ export const dynreg = (option: Option): RegExp | null => {
   }
 
   if (recorder?.Symbol?.active === true) {
-    return new RegExp(/^.+$/);
+    let symbolString = [];
+
+    for (const iterator of Object.keys(recorder)) {
+      if (recorder[iterator]?.active === false) {
+        symbolString.push(recorder[iterator]?.reg);
+      }
+    }
+
+    let reg = `^[^${symbolString.join('')}]+$`;
+    console.log(reg);
+    return new RegExp(reg);
   }
 
   let regString = [];

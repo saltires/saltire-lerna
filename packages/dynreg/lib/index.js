@@ -6,7 +6,7 @@ exports.dynreg = void 0;
  * @param option Option
  */
 const dynreg = (option) => {
-  var _a, _b, _c;
+  var _a, _b, _c, _d, _e;
   const recorder = {
     // Just Support digital（仅支持数字）
     Number: {
@@ -26,7 +26,7 @@ const dynreg = (option) => {
     // Just Support Symbol（仅支持符号，符号中包含空格）
     Symbol: {
       active: false,
-      reg: '.',
+      reg: '^(0-9a-zA-Z\u4e00-\u9fa5)',
     },
   };
   if (parseParams(option, recorder) === false) {
@@ -38,12 +38,20 @@ const dynreg = (option) => {
       ? void 0
       : _a.active) === true
   ) {
-    return new RegExp(/^.+$/);
+    let symbolString = [];
+    for (const iterator of Object.keys(recorder)) {
+      if (((_b = recorder[iterator]) === null || _b === void 0 ? void 0 : _b.active) === false) {
+        symbolString.push((_c = recorder[iterator]) === null || _c === void 0 ? void 0 : _c.reg);
+      }
+    }
+    let reg = `^[^${symbolString.join('')}]+$`;
+    console.log(reg);
+    return new RegExp(reg);
   }
   let regString = [];
   for (const iterator of Object.keys(recorder)) {
-    if (((_b = recorder[iterator]) === null || _b === void 0 ? void 0 : _b.active) === true) {
-      regString.push((_c = recorder[iterator]) === null || _c === void 0 ? void 0 : _c.reg);
+    if (((_d = recorder[iterator]) === null || _d === void 0 ? void 0 : _d.active) === true) {
+      regString.push((_e = recorder[iterator]) === null || _e === void 0 ? void 0 : _e.reg);
     }
   }
   const ret = `^[${regString.join('')}]+$`;
