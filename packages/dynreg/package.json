@@ -1,6 +1,6 @@
 {
   "name": "dynreg",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dynamically generated regularization",
   "keywords": [
     "reg",
