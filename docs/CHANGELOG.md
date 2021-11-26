@@ -4,6 +4,12 @@ sidebar: auto
 
 # 更新记录
 
+## @ahau2019/hash@1.8.8
+
+- undefined: Publish (2021-11-26)
+- feat: feat: 更新日历 (2021-11-26)
+- docs: docs: update CHANGELOG (2021-11-26)
+
 ## @ahau2019/hash@1.8.7
 
 **Note:** Version bump only for package @ahau2019/hash@1.8.7
