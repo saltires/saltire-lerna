@@ -113,24 +113,6 @@ function renderRelease(release) {
 
   latestChangelog += `## ${name}\n\n`;
 
-  // 不同的 tag 下可能有重复的提交记录
-  commits = commits.filter(({ label, package }) => {
-    if (Boolean(label) && Boolean(package)) {
-      if (package.startsWith('hui-')) {
-        package = package.replace('hui-', '');
-      }
-
-      // 如果时插件的更新记录必须完全匹配，类似 hui-plugin-micro-app 和 hui-micro-app 的记录可能分不开
-      if (name.indexOf('plugin')) {
-        return name.startsWith(`hui-${package}`);
-      }
-
-      return name.indexOf(package) > -1;
-    }
-
-    return false;
-  });
-
   if (commits.length) {
     commits.forEach(({ label, message }) => {
       latestChangelog += `- ${label}: ${message} (${date})\n`;
