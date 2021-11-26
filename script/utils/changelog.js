@@ -40,6 +40,7 @@ function getToday() {
 }
 
 function parseLogMessage(commit) {
+  console.log('commit', commit)
   const parts = commit.match(/ref<(.*)> message<(.*)> date<(.*)>/) || [];
 
   if (!parts || parts.length === 0) {
