@@ -4,6 +4,10 @@ sidebar: auto
 
 # 更新记录
 
+## @ahau2019/hash@1.8.6
+
+**Note:** Version bump only for package @ahau2019/hash@1.8.6
+
 ## @ahau2019/hash@1.8.5
 
 **Note:** Version bump only for package @ahau2019/hash@1.8.5
