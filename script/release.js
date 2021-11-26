@@ -34,11 +34,11 @@ async function release() {
   }
 
   // Bump version and publish
-  await exec('node', [lernaCli, 'version', 'patch' '--yes']);
+  await exec('node', [lernaCli, 'version', 'patch', '--yes']);
 
   const latestTag = await git.latestTagOrFirstCommit();
 
-  await exec('node', [lernaCli, 'publish', '--exact', '--no-commit-hooks', '--no-push']);
+  await exec('node', [lernaCli, 'publish', '--exact', '--no-commit-hooks', '--no-push', '--yes']);
   // await exec(lernaCli, ['publish', '--exact', '--no-commit-hooks', '--no-push']);
 
   // get release notes
