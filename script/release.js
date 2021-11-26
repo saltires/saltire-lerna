@@ -44,6 +44,8 @@ async function release() {
   // get release notes
   const releaseNotes = await getChangelog(latestTag, originalChangelog);
 
+  console.log('releaseNotes', releaseNotes)
+
   writeFileSync(resolveFile('./docs/CHANGELOG.md'), releaseNotes);
 
   // Commit
