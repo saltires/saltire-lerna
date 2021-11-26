@@ -26,6 +26,7 @@ async function release() {
   // const latestTag = "@hui/router@0.0.45";
 
   let originalChangelog = '';
+  const latestTag = await git.latestTagOrFirstCommit();
 
   try {
     originalChangelog = readFileSync(resolveFile('./docs/CHANGELOG.md')).toString();
@@ -35,8 +36,6 @@ async function release() {
 
   // Bump version and publish
   await exec('node', [lernaCli, 'version', 'patch', '--yes']);
-
-  const latestTag = await git.latestTagOrFirstCommit();
 
   await exec('node', [lernaCli, 'publish', 'from-package', '--exact', '--no-commit-hooks', '--no-push', '--yes']);
   // await exec(lernaCli, ['publish', '--exact', '--no-commit-hooks', '--no-push']);
