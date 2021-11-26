@@ -3,5 +3,5 @@
 module.exports = hash;
 
 function hash() {
-    // TODO is a test color
+    // TODO is a test color feat
 } 

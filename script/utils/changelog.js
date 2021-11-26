@@ -115,7 +115,9 @@ function renderRelease(release) {
 
   if (commits.length) {
     commits.forEach(({ label, message }) => {
-      latestChangelog += `- ${label}: ${message} (${date})\n`;
+      if (label) {
+        latestChangelog += `- ${label}: ${message} (${date})\n`;
+      }
     });
   } else {
     latestChangelog += `**Note:** Version bump only for package ${name}\n`;
