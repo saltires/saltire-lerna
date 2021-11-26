@@ -23,8 +23,6 @@ async function release() {
   if (gitStatus.length) {
     printErrorAndExit('Your git status is not clean. Aborting.');
   }
-
-  const latestTag = await git.latestTagOrFirstCommit();
   // const latestTag = "@hui/router@0.0.45";
 
   let originalChangelog = '';
@@ -36,6 +34,10 @@ async function release() {
   }
 
   // Bump version and publish
+  await exec('node', [lernaCli, 'version', 'patch' '--yes']);
+
+  const latestTag = await git.latestTagOrFirstCommit();
+
   await exec('node', [lernaCli, 'publish', '--exact', '--no-commit-hooks', '--no-push']);
   // await exec(lernaCli, ['publish', '--exact', '--no-commit-hooks', '--no-push']);
 
@@ -49,15 +51,7 @@ async function release() {
   await exec('git', ['commit', '--all', '--message', commitMessage]);
 
   // Push
-  await exec('git', ['push', 'origin', 'feature-rgbhex']);
+  await exec('git', ['push', 'origin', 'master']);
 }
-
-// require('@toolkit-js/ibuild')
-//   .default()
-//   .then(release)
-//   .catch((err) => {
-//     console.error(err);
-//     process.exit(1);
-//   });
 
 release().catch((error) => console.log(error));
