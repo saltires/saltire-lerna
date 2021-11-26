@@ -43,6 +43,8 @@ function parseLogMessage(commit) {
   console.log('commit', commit)
   const parts = commit.match(/ref<(.*)> message<(.*)> date<(.*)>/) || [];
 
+  console.log('parts', parts)
+
   if (!parts || parts.length === 0) {
     return null;
   }
