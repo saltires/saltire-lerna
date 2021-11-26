@@ -7,7 +7,7 @@
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean -y",
     "prettier": "prettier -c --write **/*.{js,jsx,tsx,ts,less,md,json}",
-    "release": "npm run prettier && node script/release.js"
+    "release": "node script/release.js"
   },
   "repository": {
     "type": "git",

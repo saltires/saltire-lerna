@@ -3,5 +3,5 @@
 module.exports = hash;
 
 function hash() {
-    // TODO is a test
+    // TODO is a test hi
 } 
