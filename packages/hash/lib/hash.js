@@ -3,5 +3,5 @@
 module.exports = hash;
 
 function hash() {
-    // TODO is a beautify world foo
-}
+    // TODO is a beautify world foo bar
+} 
