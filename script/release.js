@@ -38,7 +38,7 @@ async function release() {
 
   const latestTag = await git.latestTagOrFirstCommit();
 
-  await exec('node', [lernaCli, 'publish', '--exact', '--no-commit-hooks', '--no-push', '--yes']);
+  await exec('node', [lernaCli, 'publish', 'from-package', '--exact', '--no-commit-hooks', '--no-push', '--yes']);
   // await exec(lernaCli, ['publish', '--exact', '--no-commit-hooks', '--no-push']);
 
   // get release notes
