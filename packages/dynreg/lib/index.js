@@ -21,12 +21,12 @@ const dynreg = (option) => {
     // Just Support Chinese（仅支持中文文字）
     Chinese: {
       active: false,
-      reg: '\u4e00-\u9fa5',
+      reg: '\u3007-\u9fa5',
     },
     // Just Support Symbol（仅支持符号，符号中包含空格）
     Symbol: {
       active: false,
-      reg: '^(0-9a-zA-Z\u4e00-\u9fa5)',
+      reg: '^(0-9a-zA-Z\u3007-\u9fa5)',
     },
   };
   if (parseParams(option, recorder) === false) {
