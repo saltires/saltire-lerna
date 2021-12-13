@@ -4,6 +4,11 @@ sidebar: auto
 
 # 更新记录
 
+## dynreg@0.0.3
+
+- feat: feat: 修改 dynrge 中文支持程度 (2021-12-13)
+- docs: docs: update CHANGELOG (2021-12-13)
+
 ## @ahau2019/hash@1.8.9
 
 - feat: feat: halou (2021-11-26)
