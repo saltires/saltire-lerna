@@ -4,6 +4,11 @@ sidebar: auto
 
 # 更新记录
 
+## @niocn/md-loader@0.1.1
+
+- feat: feat: delete md-loader and add webpack-md-loader (2022-03-01)
+- docs: docs: update CHANGELOG (2022-03-01)
+
 ## dynreg@0.0.3
 
 - feat: feat: 修改 dynrge 中文支持程度 (2021-12-13)
