@@ -1,6 +1,6 @@
 {
   "name": "@niocn/md-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A WebPack's Loader used to help parse MD files",
   "keywords": [
     "md-loader",
