@@ -19,7 +19,7 @@ const colors = [
 let index = 0;
 const cache: { [prop: string]: ChalkInstance } = {};
 
-module.exports = (pkg: string): ChalkInstance => {
+export default (pkg: string): ChalkInstance => {
   if (!cache[pkg]) {
     const color = colors[index];
     let str = ((chalk as any)[color] as ChalkInstance).bold(pkg) as any as ChalkInstance;

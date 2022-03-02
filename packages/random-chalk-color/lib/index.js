@@ -23,7 +23,7 @@ const colors = [
 ];
 let index = 0;
 const cache = {};
-module.exports = (pkg) => {
+exports.default = (pkg) => {
   if (!cache[pkg]) {
     const color = colors[index];
     let str = chalk_1.default[color].bold(pkg);
