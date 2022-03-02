@@ -1,0 +1,48 @@
+{
+  "name": "@niocn/plugin-transform-arrow-functions",
+  "version": "0.1.0",
+  "description": "plugin-transform-arrow-functions ",
+  "keywords": [
+    "plugin-transform-arrow-functions",
+    "typescript"
+  ],
+  "repository": "saltires/plugin-transform-arrow-functions",
+  "license": "MIT",
+  "author": "saltires <ye99812@163.com>",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "npm run clean && tsc && npm run copy",
+    "test": "jest --coverage",
+    "copy": "copyfiles -u 1 \"src/**/*.d.ts\" lib"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/traverse": "^7.17.3",
+    "@babel/types": "^7.17.0",
+    "@types/jest": "^27.0.2",
+    "@types/node": "16.9.6",
+    "copyfiles": "^2.4.1",
+    "jest": "27.2.1",
+    "rimraf": "3.0.2",
+    "ts-jest": "27.0.5",
+    "typescript": "4.4.3"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  }
+}
