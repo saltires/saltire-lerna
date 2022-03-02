@@ -1,6 +1,6 @@
 {
   "name": "random-chalk-color",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Randomly generated different colors of chalk function",
   "keywords": [
     "random-chalk-color",
@@ -14,7 +14,7 @@
   "files": [
     "lib"
   ],
-  "type":"module",
+  "type": "module",
   "exports": "./lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
