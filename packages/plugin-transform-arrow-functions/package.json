@@ -1,6 +1,6 @@
 {
   "name": "@niocn/plugin-transform-arrow-functions",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "plugin-transform-arrow-functions ",
   "keywords": [
     "plugin-transform-arrow-functions",
@@ -20,7 +20,6 @@
     "test": "jest --coverage",
     "copy": "copyfiles -u 1 \"src/**/*.d.ts\" lib"
   },
-  "dependencies": {},
   "peerDependencies": {
     "@babel/core": "^7.0.0-0"
   },
