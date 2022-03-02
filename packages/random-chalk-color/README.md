@@ -17,8 +17,11 @@ $ yarn add random-chalk-color -D
 
 ```javascript
 import randomColor from 'random-chalk-color';
+// cjs - const randomColor = require('random-chalk-color').default
 
 randomColor('The color of the text may be any color');
 ```
 
 ## API
+
+The RandomColor function is returned to a chalk instance, Please Check out [Chalk](https://www.npmjs.com/package/chalk)
