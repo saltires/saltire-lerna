@@ -1,4 +1,4 @@
-import chalk, { ChalkInstance } from 'chalk';
+import chalk, { Chalk } from 'chalk';
 
 const colors = [
   'red',
@@ -17,12 +17,12 @@ const colors = [
 ];
 
 let index = 0;
-const cache: { [prop: string]: ChalkInstance } = {};
+const cache: { [prop: string]: Chalk } = {};
 
-export default (pkg: string): ChalkInstance => {
+export default (pkg: string): Chalk => {
   if (!cache[pkg]) {
     const color = colors[index];
-    let str = ((chalk as any)[color] as ChalkInstance).bold(pkg) as any as ChalkInstance;
+    let str = ((chalk as any)[color] as Chalk).bold(pkg) as any as Chalk;
     cache[pkg] = str;
 
     if (index === colors.length - 1) {
