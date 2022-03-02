@@ -4,6 +4,14 @@ sidebar: auto
 
 # 更新记录
 
+## random-chalk-color@0.1.1
+
+- feat: feat: random-chalk-color (2022-03-02)
+- feat: feat: random-chalk-color (2022-03-02)
+- feat: feat: random-chalk-color (2022-03-02)
+- feat: feat: random-chalk-color (2022-03-02)
+- docs: docs: update CHANGELOG (2022-03-02)
+
 ## @niocn/plugin-transform-arrow-functions@0.1.2
 
 - docs: docs: private flag (2022-03-02)
