@@ -4,6 +4,10 @@ sidebar: auto
 
 # 更新记录
 
+## @niocn/plugin-transform-arrow-functions@0.1.2
+
+- docs: docs: private flag (2022-03-02)
+
 ## @niocn/md-loader@0.1.1
 
 - feat: feat: delete md-loader and add webpack-md-loader (2022-03-01)
