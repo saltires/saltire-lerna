@@ -23,7 +23,7 @@ const colors = [
 ];
 let index = 0;
 const cache = {};
-function default_1(pkg) {
+module.exports = (pkg) => {
   if (!cache[pkg]) {
     const color = colors[index];
     let str = chalk_1.default[color].bold(pkg);
@@ -35,5 +35,4 @@ function default_1(pkg) {
     }
   }
   return cache[pkg];
-}
-exports.default = default_1;
+};

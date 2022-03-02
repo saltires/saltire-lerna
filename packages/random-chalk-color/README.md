@@ -16,7 +16,9 @@ $ yarn add random-chalk-color -D
 ## Getting started
 
 ```javascript
-const randomChalkColor = require('random-chalk-color');
+const randomColor = require('random-chalk-color');
+
+randomColor('The color of the text may be any color');
 ```
 
 ## API
