@@ -3,7 +3,7 @@ import * as t from '@babel/types';
 
 export default (api: any, options: any) => {
   return {
-    name: '@niocn/plugin-transform-class',
+    name: '@niocn/plugin-transform-import',
     visitor: {
       ImportDeclaration(nodePath: NodePath<t.ImportDeclaration>) {
         const { specifiers } = nodePath.node;

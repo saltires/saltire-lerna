@@ -39,9 +39,10 @@ var __importStar =
 Object.defineProperty(exports, '__esModule', { value: true });
 const t = __importStar(require('@babel/types'));
 let globalOptions;
+let jsxAttributes;
 exports.default = (api, options) => {
   return {
-    name: '@niocn/plugin-transform-class',
+    name: 'plugin-screed-component-diff',
     visitor: {
       JSXOpeningElement(nodePath) {
         if (!t.isJSXOpeningElement(nodePath)) return;
@@ -56,6 +57,7 @@ exports.default = (api, options) => {
         if (options.name !== nodePath.node.name.name) return;
         globalOptions = options;
         let hasJSXSpreadAttribute = false;
+        let passReg = true;
         nodePath.node.attributes.length &&
           nodePath.node.attributes.forEach((item) => {
             if (t.isJSXSpreadAttribute(item)) {
@@ -63,30 +65,67 @@ exports.default = (api, options) => {
             }
           });
         if (hasJSXSpreadAttribute) return;
-        let jsxAttributes = nodePath.node.attributes || [];
-        let attrsAddCompiler = processAtttributes('add', jsxAttributes);
-        let attrsRemoveCompiler = processAtttributes('remove', jsxAttributes);
-        attrsAddCompiler(ProcessAddAttributes);
+        jsxAttributes = nodePath.node.attributes || [];
+        passReg = checkReg(options, passReg);
+        if (!passReg) return;
+        let attrsAddCompiler = processAtttributes('add');
+        let attrsRemoveCompiler = processAtttributes('remove');
         attrsRemoveCompiler(ProcessRemoveAttributes);
+        attrsAddCompiler(ProcessAddAttributes);
+        nodePath.node.attributes = jsxAttributes;
       },
     },
   };
 };
-function processAtttributes(type, jsxAttributes) {
+function checkReg(options, pass) {
+  var _a, _b;
+  if (
+    ((_a = options === null || options === void 0 ? void 0 : options.reg) === null || _a === void 0
+      ? void 0
+      : _a.attrs) &&
+    Object.keys(
+      (_b = options === null || options === void 0 ? void 0 : options.reg) === null || _b === void 0
+        ? void 0
+        : _b.attrs,
+    ).length > 0
+  ) {
+    let regAttrs = options.reg.attrs;
+    for (let key in regAttrs) {
+      if (regAttrs.hasOwnProperty(key)) {
+        let reg = regAttrs[key];
+        if (reg instanceof String) {
+          reg = new RegExp(reg);
+        }
+        jsxAttributes.length &&
+          jsxAttributes.forEach((item) => {
+            if (item.name.name === key) {
+              if (reg.test(item.value.value)) {
+                pass = true;
+              } else {
+                pass = false;
+              }
+            }
+          });
+      }
+    }
+  }
+  return pass;
+}
+function processAtttributes(type) {
   const behavior = globalOptions.attrs[type];
   return function (cb) {
     if (Array.isArray(behavior)) {
       behavior.forEach((key) => {
-        cb(jsxAttributes, key);
+        cb(key);
       });
     } else {
       for (let key in behavior) {
-        cb(jsxAttributes, key, behavior[key]);
+        cb(key, behavior[key]);
       }
     }
   };
 }
-function ProcessAddAttributes(jsxAttributes, key, value) {
+function ProcessAddAttributes(key, value) {
   let hasSameKeyInJSXAttributes = false;
   jsxAttributes.forEach((item) => {
     if (item.name.name === key) {
@@ -102,7 +141,7 @@ function ProcessAddAttributes(jsxAttributes, key, value) {
   }
   jsxAttributes.push(jsxAttribute);
 }
-function ProcessRemoveAttributes(jsxAttributes, key) {
+function ProcessRemoveAttributes(key) {
   if (!key || !jsxAttributes.length) return;
   jsxAttributes = jsxAttributes.filter((item) => {
     return item.name.name !== key;

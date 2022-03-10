@@ -1,5 +1,10 @@
 export interface Options {
   name: string;
+  reg: {
+    attrs: {
+      [props: string]: RegComponent;
+    };
+  };
   attrs: {
     add: {
       [props: string]: string | undefined | null;
@@ -9,3 +14,5 @@ export interface Options {
 }
 
 export type AttrBehavior = 'add' | 'remove';
+
+export type RegComponent = RegExp | string;

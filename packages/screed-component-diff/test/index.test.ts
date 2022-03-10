@@ -14,6 +14,11 @@ const result0 = babelCore.transform(source, {
       pluginScreed,
       {
         name: 'h-icon',
+        reg: {
+          attrs: {
+            name: /^suc/,
+          },
+        },
         attrs: {
           add: {
             kngiht: 'qishi',
@@ -43,7 +48,7 @@ const result1 = babelCore.transform(source, {
   ],
 });
 
-// console.log(result.code);
+console.log(result0.code);
 
 test('测试 vue', () => {
   expect(result0.code).toMatch(/kngiht/);

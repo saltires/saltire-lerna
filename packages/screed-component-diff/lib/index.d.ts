@@ -11,8 +11,4 @@ declare const _default: (
   };
 };
 export default _default;
-export declare type attrsCallbackFn = (
-  jsxAttributes: Array<t.JSXAttribute>,
-  key: string,
-  value?: string | null | undefined,
-) => void;
+export declare type attrsCallbackFn = (key: string, value?: string | null | undefined) => void;

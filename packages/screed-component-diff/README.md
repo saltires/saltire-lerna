@@ -1,6 +1,6 @@
 # plugin-screed-component-diff
 
-![coverage](https://img.shields.io/badge/Coverage-60.6%25-green) ![test](https://img.shields.io/badge/passed-tests-blue)
+![coverage](https://img.shields.io/badge/Coverage-%2065.47%25-green) ![test](https://img.shields.io/badge/passed-tests-blue)
 
 > Helps users smooth out differences in the use of certain components
 
@@ -31,6 +31,11 @@ const result0 = babelCore.transform(source, {
       pluginScreed,
       {
         name: 'h-icon',
+        reg: {
+          attrs: {
+            name: /^suc/,
+          },
+        },
         attrs: {
           add: {
             kngiht: 'qishi',

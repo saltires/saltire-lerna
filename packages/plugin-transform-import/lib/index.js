@@ -40,7 +40,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const t = __importStar(require('@babel/types'));
 exports.default = (api, options) => {
   return {
-    name: '@niocn/plugin-transform-class',
+    name: '@niocn/plugin-transform-import',
     visitor: {
       ImportDeclaration(nodePath) {
         const { specifiers } = nodePath.node;
