@@ -1,6 +1,6 @@
 {
   "name": "@niocn/plugin-transform-import",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "For some libraries, such as lodash can achieve on-demand loaded by converting the import statement",
   "keywords": [
     "plugin-transform-import",
@@ -24,9 +24,9 @@
     "@babel/core": "^7.0.0-0"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.2",
     "@babel/traverse": "^7.17.3",
     "@babel/types": "^7.17.0",
+    "@types/jest": "^27.0.2",
     "@types/node": "16.9.6",
     "copyfiles": "^2.4.1",
     "jest": "27.2.1",
