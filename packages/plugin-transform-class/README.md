@@ -1,4 +1,4 @@
-# plugin-transform-class
+# @niocn/plugin-transform-class
 
 ![coverage](https://img.shields.io/badge/Coverage-74.07%25%09-green) ![test](https://img.shields.io/badge/passed-tests-blue)
 

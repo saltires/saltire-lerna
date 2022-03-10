@@ -16,7 +16,6 @@ $ yarn add @niocn/plugin-transform-arrow-functions -D
 
 ```javascript
 const pluginTransformArrowFunctions = require('plugin-transform-arrow-functions');
-
 const babelCore = require('@babel/core');
 const babelTypes = require('@babel/types');
 

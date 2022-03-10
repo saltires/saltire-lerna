@@ -1,12 +1,12 @@
 {
-  "name": "@niocn/plugin-transform-class",
-  "version": "0.1.4",
-  "description": "The Babel plug-in for transforming classes in ES2015",
+  "name": "@niocn/plugin-transform-import",
+  "version": "0.1.0",
+  "description": "For some libraries, such as lodash can achieve on-demand loaded by converting the import statement",
   "keywords": [
-    "plugin-transform-class",
+    "plugin-transform-import",
     "typescript"
   ],
-  "repository": "saltires/plugin-transform-class",
+  "repository": "saltires/plugin-transform-import",
   "license": "MIT",
   "author": "saltires <ye998102@163.com>",
   "main": "lib/index.js",
