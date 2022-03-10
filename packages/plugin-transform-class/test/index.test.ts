@@ -16,9 +16,9 @@ class Person {
     console.log('playing')
   }
 
-  qishi = '1'
+  number = '100'
 
-  static saltire = 'hihi'
+  static range = 'unit'
 }
 `;
 
@@ -29,6 +29,6 @@ const result = babelCore.transform(source, {
 console.log(result.code);
 
 test('测试转换结果', () => {
-  expect(result.code).toMatch(/Person.saltire = 'hihi'/);
+  expect(result.code).toMatch(/Person.saltire = 'unit'/);
   expect(result.code).toMatch(/Person.prototype.play/);
 });
