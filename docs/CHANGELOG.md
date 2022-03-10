@@ -4,6 +4,10 @@ sidebar: auto
 
 # 更新记录
 
+## @niocn/plugin-transform-class@0.1.2
+
+- feat: feat: plugin-transform-class (2022-03-10)
+
 ## random-chalk-color@0.1.7
 
 - feat: feat: update (2022-03-02)
