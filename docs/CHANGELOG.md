@@ -4,6 +4,21 @@ sidebar: auto
 
 # 更新记录
 
+## @niocn/plugin-transform-import@0.1.1
+
+- feat: feat: upload plugin-transform-import (2022-03-10)
+- docs: docs: update CHANGELOG (2022-03-10)
+
+## @niocn/plugin-transform-class@0.1.5
+
+- feat: feat: upload plugin-transform-import (2022-03-10)
+- docs: docs: update CHANGELOG (2022-03-10)
+
+## @niocn/plugin-transform-arrow-functions@0.1.4
+
+- feat: feat: upload plugin-transform-import (2022-03-10)
+- docs: docs: update CHANGELOG (2022-03-10)
+
 ## @niocn/plugin-transform-class@0.1.4
 
 - docs: docs: modify the readme.md in plugin-transform-class package (2022-03-10)
