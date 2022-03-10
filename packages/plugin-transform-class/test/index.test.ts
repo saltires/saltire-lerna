@@ -16,7 +16,9 @@ class Person {
     console.log('playing')
   }
 
-  walkWay: '直立行走'
+  qishi = '1'
+
+  static saltire = 'hihi'
 }
 `;
 
@@ -24,8 +26,9 @@ const result = babelCore.transform(source, {
   plugins: [pluginTranArrow],
 });
 
-// console.log(result.code)
+console.log(result.code);
 
 test('测试转换结果', () => {
-  expect(result.code).toMatch(/function/);
+  expect(result.code).toMatch(/Person.saltire = 'hihi'/);
+  expect(result.code).toMatch(/Person.prototype.play/);
 });

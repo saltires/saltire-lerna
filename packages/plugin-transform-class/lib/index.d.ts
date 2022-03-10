@@ -1,9 +1,12 @@
 import { NodePath } from '@babel/traverse';
 import * as t from '@babel/types';
-declare const _default: {
+declare const _default: (
+  api: any,
+  options: any,
+) => {
   name: string;
   visitor: {
-    ArrowFunctionExpression(path: NodePath<t.ArrowFunctionExpression>): void;
+    ClassDeclaration(nodepath: NodePath<t.ClassDeclaration>): void;
   };
 };
 export default _default;
