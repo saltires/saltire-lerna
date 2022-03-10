@@ -1,4 +1,4 @@
-# screed-component-diff
+# plugin-screed-component-diff
 
 ![coverage](https://img.shields.io/badge/Coverage-60.6%25-green) ![test](https://img.shields.io/badge/passed-tests-blue)
 
@@ -7,16 +7,16 @@
 ## Installation
 
 ```shell
-$ npm install screed-component-diff -D
+$ npm install plugin-screed-component-diff -D
 
 # or yarn
-$ yarn add screed-component-diff -D
+$ yarn add plugin-screed-component-diff -D
 ```
 
 ## Getting started
 
 ```javascript
-const pluginScreed = require('screed-component-diff');
+const pluginScreed = require('plugin-screed-component-diff');
 const babelCore = require('@babel/core');
 const babelTypes = require('@babel/types');
 
