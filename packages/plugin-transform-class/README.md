@@ -7,16 +7,16 @@
 ## Installation
 
 ```shell
-$ npm install plugin-transform-class -D
+$ npm install @niocn/plugin-transform-class -D
 
 # or yarn
-$ yarn add plugin-transform-class -D
+$ yarn add @niocn/plugin-transform-class -D
 ```
 
 ## Getting started
 
 ```javascript
-const pluginTransformClass = require('plugin-transform-class');
+const pluginTransformClass = require('@niocn/plugin-transform-class');
 const babelCore = require('@babel/core');
 const babelTypes = require('@babel/types');
 
