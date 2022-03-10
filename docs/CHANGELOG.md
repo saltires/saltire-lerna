@@ -4,6 +4,10 @@ sidebar: auto
 
 # 更新记录
 
+## plugin-screed-component-diff@0.1.2
+
+- feat: feat: push screed-component-diff (2022-03-10)
+
 ## @niocn/plugin-transform-import@0.1.1
 
 - feat: feat: upload plugin-transform-import (2022-03-10)
