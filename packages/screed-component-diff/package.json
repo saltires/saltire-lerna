@@ -1,6 +1,6 @@
 {
   "name": "plugin-screed-component-diff",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Helps users smooth out differences in the use of certain components",
   "keywords": [
     "plugin-screed-component-diff",
