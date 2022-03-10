@@ -1,6 +1,6 @@
 {
   "name": "@niocn/plugin-transform-class",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The Babel plug-in for transforming classes in ES2015",
   "keywords": [
     "plugin-transform-class",
@@ -20,7 +20,6 @@
     "build": "npm run clean && tsc && yarn copy",
     "test": "jest --coverage"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/traverse": "^7.17.3",
