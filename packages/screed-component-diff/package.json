@@ -1,12 +1,12 @@
 {
-  "name": "screed-component-diff",
+  "name": "plugin-screed-component-diff",
   "version": "0.1.1",
   "description": "Helps users smooth out differences in the use of certain components",
   "keywords": [
-    "screed-component-diff",
+    "plugin-screed-component-diff",
     "typescript"
   ],
-  "repository": "saltires/screed-component-diff",
+  "repository": "saltires/plugin-screed-component-diff",
   "license": "MIT",
   "author": "saltires <ye998102@163.com>",
   "main": "lib/index.js",
