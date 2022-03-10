@@ -1,12 +1,12 @@
 {
-  "name": "@niocn/plugin-transform-import",
-  "version": "0.1.1",
-  "description": "For some libraries, such as lodash can achieve on-demand loaded by converting the import statement",
+  "name": "screed-component-diff",
+  "version": "0.1.0",
+  "description": "Helps users smooth out differences in the use of certain components",
   "keywords": [
-    "plugin-transform-import",
+    "screed-component-diff",
     "typescript"
   ],
-  "repository": "saltires/plugin-transform-import",
+  "repository": "saltires/screed-component-diff",
   "license": "MIT",
   "author": "saltires <ye998102@163.com>",
   "main": "lib/index.js",
@@ -24,10 +24,13 @@
     "@babel/core": "^7.0.0-0"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.2",
+    "@babel/preset-react": "^7.16.7",
     "@babel/traverse": "^7.17.3",
     "@babel/types": "^7.17.0",
+    "@types/jest": "^27.0.2",
     "@types/node": "16.9.6",
+    "@vue/babel-preset-app": "^5.0.1",
+    "@vue/babel-preset-jsx": "^1.2.4",
     "copyfiles": "^2.4.1",
     "jest": "27.2.1",
     "rimraf": "3.0.2",
