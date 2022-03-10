@@ -1,6 +1,6 @@
 {
   "name": "@niocn/plugin-transform-class",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "The Babel plug-in for transforming classes in ES2015",
   "keywords": [
     "plugin-transform-class",
