@@ -4,6 +4,11 @@ sidebar: auto
 
 # 更新记录
 
+## @niocn/fbuild@1.2.3
+
+- feat: feat: fbuild (2022-03-23)
+- docs: docs: update CHANGELOG (2022-03-23)
+
 ## plugin-screed-component-diff@0.1.4
 
 - feat: feat: add reg for plugin-screed-component-diff (2022-03-10)
