@@ -13,15 +13,15 @@
 
 ## Installation
 
-Install `@niocn/father` via yarn or npm.
+Install `@niocn/fbuild` via yarn or npm.
 
 ```bash
-$ yarn add @niocn/father -D
+$ yarn add @niocn/fbuild -D
 ```
 
 ## Usage
 
-```json
+```js
 //  package.json
 {
   "main": "index.js",
