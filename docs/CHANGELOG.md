@@ -4,6 +4,11 @@ sidebar: auto
 
 # 更新记录
 
+## @niocn/fbuild@1.2.4
+
+- docs: docs: fbuild readme.md (2022-03-23)
+- docs: docs: update CHANGELOG (2022-03-23)
+
 ## @niocn/fbuild@1.2.3
 
 - feat: feat: fbuild (2022-03-23)
